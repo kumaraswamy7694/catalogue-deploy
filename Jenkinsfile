@@ -10,6 +10,17 @@ pipeline {
                 echo "Deploying..."
             }
         }
+
+
+        stage('Init'){
+            steps{
+                sh """
+                 cd terraform
+                 terraform init -reconfigure
+                """
+            }
+        }
+        
  
         post{
             always{
