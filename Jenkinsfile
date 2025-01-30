@@ -21,6 +21,14 @@ pipeline {
             }
         }
         
+            stage('Plan'){
+            steps{
+                sh """
+                 cd terraform
+                 terraform plan
+                """
+            }
+        }
  
         post{
             always{
